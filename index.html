@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Interface</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        .chat-container {
+            max-width: 600px;
+            margin: auto;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        .chat-box {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+        .input-container {
+            display: flex;
+            padding: 0.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <!-- Chat messages will be appended here -->
+        </div>
+        <div class="input-container">
+            <div class="flex items-center mr-4">
+                <input type="radio" id="answer-type-p" name="answer-type" value="p" checked>
+                <label for="answer-type-p" class="ml-1">Paragraph</label>
+            </div>
+            <div class="flex items-center mr-4">
+                <input type="radio" id="answer-type-step" name="answer-type" value="step">
+                <label for="answer-type-step" class="ml-1">Step by Step</label>
+            </div>
+            <input type="text" id="user-input" class="flex-1 border border-gray-300 rounded-lg p-2" placeholder="Type your message..." />
+            <button id="send-button" class="ml-2 bg-blue-500 text-white rounded-lg px-4 py-2">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
